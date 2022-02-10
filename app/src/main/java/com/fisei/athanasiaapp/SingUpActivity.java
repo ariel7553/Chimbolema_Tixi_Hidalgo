@@ -79,25 +79,26 @@ public class SingUpActivity extends AppCompatActivity {
 
         } else {
 
-          String contraseña = editTextPassword.getText().toString();
-          String pass = Pattern.compile(
-                  "^" +
-                          "(?=.*[0-9])"+
-                          "(?=.*[a-z])" +
-                          "(?=.*[A-Z])" +
-                          "(?=.*[@#$%^&+=])" +
-                          "(?=\\S+$)" +
-                          ".{6,10}" +
-                          "$"
-
-          )
-
+            String contraseña = editTextPassword.getText().toString();
+            Pattern uppercase = Pattern.compile("[A-Z]");
+            Pattern lowercase = Pattern.compile("[a-z]");
+            Pattern digit = Pattern.compile("[0-9]");
+            if (contraseña.length() < 10) {
+               Toast.makeText(this, "La contraseña debe tener 10 carateres",Toast.LENGTH_LONG).show();
+            } else {
+                if (contraseña.length() > 6) {
+                    Toast.makeText(this, "La contraseña debe tener minimo 6 caracteres",Toast.LENGTH_LONG).show();
+                }
+            }
+        }
 
             errorTextView.setText("");
             SignUpTask signUpTask = new SignUpTask();
             signUpTask.execute();
         }
-    }
+
+
+
 
 
 
