@@ -78,7 +78,35 @@ public class SingUpActivity extends AppCompatActivity {
 
         } else {
             String contraseña = editTextPassword.getText().toString();
+            if (contraseña.length() < 6 || contraseña.length() > 10){
+                Toast.makeText(this, "La contraseña debe  tener entre 6 y 10 caracteres", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (!contraseña.matches("(?=.*[@#$*/.,'}{%^&+=])")) {
+                Toast.makeText(this, "debe tener caracteres especiales", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (!contraseña.matches("(?=.*[0-9])")) {
+                Toast.makeText(this, "debe tener numeros", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (!contraseña.matches("(?=.*[a-z])")) {
+                Toast.makeText(this, "debe tener una letra minuscula", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (!contraseña.matches("(?=.*[A-Z])")) {
+                Toast.makeText(this, "debe tener una letra mayusculas", Toast.LENGTH_LONG).show();
+                return;
+            }
 
+            errorTextView.setText("");
+            SignUpTask signUpTask = new SignUpTask();
+            signUpTask.execute();
+
+
+
+
+/*
             if (contraseña.length() < 10) {
                 Toast.makeText(this, "La contraseña debe tener máximo 10 caráteres", Toast.LENGTH_LONG).show();
             } else {
@@ -105,7 +133,7 @@ public class SingUpActivity extends AppCompatActivity {
                         }
                     }
                 }
-            }
+            }*/
         }
 
     }
