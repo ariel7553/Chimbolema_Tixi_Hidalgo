@@ -39,7 +39,7 @@ public class SingUpActivity extends AppCompatActivity {
 
     }
 
-    //correccion contraseña
+
     private class SignUpTask extends AsyncTask<URL, Void, JSONObject> {
         @Override
         protected JSONObject doInBackground(URL... urls) {
@@ -69,10 +69,15 @@ public class SingUpActivity extends AppCompatActivity {
         buttonSignUp = (Button) findViewById(R.id.btnSignUp);
         buttonSignUp.setOnClickListener(signUpButtonClicked);
     }
+    //
     private void SignUp(){
         if(editTextEmail.getText().toString().isEmpty() || editTextName.getText().toString().isEmpty() ||
                 editTextCedula.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()){
             errorTextView.setText(R.string.fields_empty_error);
+
+            if (editTextPassword.length() <6 && editTextPassword.length()> 10){
+
+            }
         } else {
             errorTextView.setText("");
             SignUpTask signUpTask = new SignUpTask();

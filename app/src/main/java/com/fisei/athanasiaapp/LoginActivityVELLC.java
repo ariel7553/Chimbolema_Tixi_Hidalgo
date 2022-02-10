@@ -36,11 +36,14 @@ public class LoginActivityVELLC extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         InitializeViewComponents();
     }
+    //
     private void Login(){
             warningTextView.setText("");
             LoginTask loginTask = new LoginTask();
             loginTask.execute();
     }
+
+
     private Boolean LoginAdmin(){
             warningTextView.setText("");
             LoginAdminTask loginAdminTask = new LoginAdminTask();
