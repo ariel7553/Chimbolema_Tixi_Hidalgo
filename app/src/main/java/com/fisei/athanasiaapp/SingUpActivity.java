@@ -82,11 +82,13 @@ public class SingUpActivity extends AppCompatActivity {
                 Toast.makeText(this, "La contraseña debe  tener entre 6 y 10 caracteres", Toast.LENGTH_LONG).show();
                 return;
             }
-            if (!contraseña.matches("(?=.*[@#$*/.,'}{%^&+=])")) {
+            boolean ma = contraseña.matches(".*[[:punct:]]");
+            if (!contraseña.matches(".*[[:punct:]]")) {
                 Toast.makeText(this, "debe tener caracteres especiales", Toast.LENGTH_LONG).show();
                 return;
             }
-            if (!contraseña.matches("(?=.*[0-9])")) {
+            boolean nu = contraseña.matches("([0-9])");
+            if (!contraseña.matches("(.*[0-9])")) {
                 Toast.makeText(this, "debe tener numeros", Toast.LENGTH_LONG).show();
                 return;
             }
