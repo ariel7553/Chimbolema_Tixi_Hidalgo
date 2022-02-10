@@ -38,6 +38,8 @@ public class SingUpActivity extends AppCompatActivity {
 
 
     }
+
+    //correccion contraseña
     private class SignUpTask extends AsyncTask<URL, Void, JSONObject> {
         @Override
         protected JSONObject doInBackground(URL... urls) {
