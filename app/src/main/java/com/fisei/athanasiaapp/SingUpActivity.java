@@ -93,11 +93,11 @@ public class SingUpActivity extends AppCompatActivity {
                 return;
             }
             if (!contraseña.matches(".*[a-z].*")) {
-                Toast.makeText(this, "debe tener una letra minuscula", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Debe tener una letra minuscula", Toast.LENGTH_LONG).show();
                 return;
             }
             if (!contraseña.matches(".*[A-Z].*")) {
-                Toast.makeText(this, "debe tener una letra mayusculas", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Debe tener una letra mayúsculas", Toast.LENGTH_LONG).show();
                 return;
             }
 
