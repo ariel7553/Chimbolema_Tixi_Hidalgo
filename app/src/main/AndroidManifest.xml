@@ -25,7 +25,7 @@
             android:label="@string/title_activity_athanasia"
             android:theme="@style/Theme.AthanasiaApp.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".LoginActivityVELLC"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

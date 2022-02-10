@@ -77,7 +77,7 @@ public class SingUpActivity extends AppCompatActivity {
         }
     }
     private void StartLoginActivity(){
-        Intent backLogin = new Intent(this, LoginActivity.class);
+        Intent backLogin = new Intent(this, LoginActivityVELLC.class);
         startActivity(backLogin);
         Toast.makeText(this, "Your register was successful", Toast.LENGTH_SHORT).show();
     }

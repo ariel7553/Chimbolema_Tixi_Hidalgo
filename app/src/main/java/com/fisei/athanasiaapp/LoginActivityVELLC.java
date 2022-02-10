@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivityVELLC extends AppCompatActivity {
 
     private EditText emailEditText;
     private EditText passwdEditText;

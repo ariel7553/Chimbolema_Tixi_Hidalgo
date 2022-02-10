@@ -6,18 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.fisei.athanasiaapp.objects.AthanasiaGlobal;
-import com.fisei.athanasiaapp.objects.Product;
-import com.fisei.athanasiaapp.objects.ShopCartItem;
 import com.fisei.athanasiaapp.objects.UserClient;
-import com.fisei.athanasiaapp.services.ProductService;
-import com.fisei.athanasiaapp.services.ShoppingCartService;
 import com.fisei.athanasiaapp.services.UserClientService;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -31,7 +25,6 @@ import org.json.JSONObject;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AthanasiaActivity extends AppCompatActivity {
 
@@ -113,7 +106,7 @@ public class AthanasiaActivity extends AppCompatActivity {
         AthanasiaGlobal.ACTUAL_USER = new UserClient();
         AthanasiaGlobal.ADMIN_PRIVILEGES = false;
         AthanasiaGlobal.SHOPPING_CART = new ArrayList<>();
-        Intent login = new Intent(this, LoginActivity.class);
+        Intent login = new Intent(this, LoginActivityVELLC.class);
         startActivity(login);
         finish();
     }
