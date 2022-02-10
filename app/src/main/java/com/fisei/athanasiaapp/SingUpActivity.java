@@ -85,10 +85,14 @@ public class SingUpActivity extends AppCompatActivity {
             Pattern digit = Pattern.compile("[0-9]");
             Pattern carater = Pattern.compile("@#$%^&+=");
             if (contraseña.length() < 10) {
-                Toast.makeText(this, "La contraseña debe tener 10 carateres", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "La contraseña debe tener máximo 10 caráteres", Toast.LENGTH_LONG).show();
             } else {
                 if (contraseña.length() > 6) {
-                    Toast.makeText(this, "La contraseña debe tener minimo 6 caracteres", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "La contraseña debe tener mÍnimo 6 carácteres", Toast.LENGTH_LONG).show();
+                }else{
+                    if (contraseña.matches("(?=.*[@#$%^&+=])"))){
+
+                    }
                 }
             }
         }
