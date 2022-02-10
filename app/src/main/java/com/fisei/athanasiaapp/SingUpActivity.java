@@ -71,9 +71,9 @@ public class SingUpActivity extends AppCompatActivity {
         buttonSignUp.setOnClickListener(signUpButtonClicked);
     }
     //
-    private void SignUp(){
-        if(editTextEmail.getText().toString().isEmpty() || editTextName.getText().toString().isEmpty() ||
-                editTextCedula.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()){
+    private void SignUp() {
+        if (editTextEmail.getText().toString().isEmpty() || editTextName.getText().toString().isEmpty() ||
+                editTextCedula.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()) {
             errorTextView.setText(R.string.fields_empty_error);
 
 
@@ -83,11 +83,12 @@ public class SingUpActivity extends AppCompatActivity {
             Pattern uppercase = Pattern.compile("[A-Z]");
             Pattern lowercase = Pattern.compile("[a-z]");
             Pattern digit = Pattern.compile("[0-9]");
+            Pattern carater = Pattern.compile("@#$%^&+=");
             if (contraseña.length() < 10) {
-               Toast.makeText(this, "La contraseña debe tener 10 carateres",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "La contraseña debe tener 10 carateres", Toast.LENGTH_LONG).show();
             } else {
                 if (contraseña.length() > 6) {
-                    Toast.makeText(this, "La contraseña debe tener minimo 6 caracteres",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "La contraseña debe tener minimo 6 caracteres", Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -96,9 +97,6 @@ public class SingUpActivity extends AppCompatActivity {
             SignUpTask signUpTask = new SignUpTask();
             signUpTask.execute();
         }
-
-
-
 
 
 
