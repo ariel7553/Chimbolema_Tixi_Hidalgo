@@ -18,6 +18,7 @@ import com.fisei.athanasiaapp.services.UserClientService;
 import org.json.JSONObject;
 
 import java.net.URL;
+import java.util.regex.Pattern;
 
 public class SingUpActivity extends AppCompatActivity {
 
@@ -75,15 +76,31 @@ public class SingUpActivity extends AppCompatActivity {
                 editTextCedula.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()){
             errorTextView.setText(R.string.fields_empty_error);
 
-            if (editTextPassword.length() <6 && editTextPassword.length()> 10){
 
-            }
         } else {
+
+          String contraseña = editTextPassword.getText().toString();
+          String pass = Pattern.compile(
+                  "^" +
+                          "(?=.*[0-9])"+
+                          "(?=.*[a-z])" +
+                          "(?=.*[A-Z])" +
+                          "(?=.*[@#$%^&+=])" +
+                          "(?=\\S+$)" +
+                          ".{6,10}" +
+                          "$"
+
+          )
+
+
             errorTextView.setText("");
             SignUpTask signUpTask = new SignUpTask();
             signUpTask.execute();
         }
     }
+
+
+
     private void StartLoginActivity(){
         Intent backLogin = new Intent(this, LoginActivityVELLC.class);
         startActivity(backLogin);
