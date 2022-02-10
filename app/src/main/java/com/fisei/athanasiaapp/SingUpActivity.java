@@ -49,6 +49,7 @@ public class SingUpActivity extends AppCompatActivity {
             responseTask = UserClientService.SignUpNewUser(newUser, editTextPassword.getText().toString());
             return null;
         }
+
         @Override
         protected void onPostExecute(JSONObject jsonObject){
             if(responseTask.Success){

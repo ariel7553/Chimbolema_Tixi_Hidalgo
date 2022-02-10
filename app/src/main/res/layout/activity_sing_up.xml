@@ -119,6 +119,7 @@
         android:layout_height="48dp"
         android:ems="10"
         android:inputType="textVisiblePassword"
+        android:maxLength="10"
         android:password="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
