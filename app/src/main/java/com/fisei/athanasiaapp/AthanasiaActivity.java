@@ -52,7 +52,7 @@ public class AthanasiaActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
+k
         if(AthanasiaGlobal.ADMIN_PRIVILEGES){
             Menu menuNav=navigationView.getMenu();
             menuNav.removeItem(R.id.nav_shop_cart);
