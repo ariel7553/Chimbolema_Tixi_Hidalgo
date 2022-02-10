@@ -76,31 +76,39 @@ public class SingUpActivity extends AppCompatActivity {
                 editTextCedula.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()) {
             errorTextView.setText(R.string.fields_empty_error);
 
-
         } else {
-
             String contraseña = editTextPassword.getText().toString();
-            Pattern uppercase = Pattern.compile("[A-Z]");
-            Pattern lowercase = Pattern.compile("[a-z]");
-            Pattern digit = Pattern.compile("[0-9]");
-            Pattern carater = Pattern.compile("@#$%^&+=");
+
             if (contraseña.length() < 10) {
                 Toast.makeText(this, "La contraseña debe tener máximo 10 caráteres", Toast.LENGTH_LONG).show();
             } else {
                 if (contraseña.length() > 6) {
                     Toast.makeText(this, "La contraseña debe tener mÍnimo 6 carácteres", Toast.LENGTH_LONG).show();
-                }else{
-                    if (contraseña.matches("(?=.*[@#$%^&+=])"))){
-
+                } else {
+                    if (!contraseña.matches("(?=.*[@#$%^&+=])")) {
+                        Toast.makeText(this, "debe tener caracteres especiales", Toast.LENGTH_LONG).show();
+                    } else {
+                        if (!contraseña.matches("(?=.*[0-9])")) {
+                            Toast.makeText(this, "debe tener numeros", Toast.LENGTH_LONG).show();
+                        } else {
+                            if (!contraseña.matches("(?=.*[a-z])")) {
+                                Toast.makeText(this, "debe tener una letra minuscula", Toast.LENGTH_LONG).show();
+                            } else {
+                                if (!contraseña.matches("(?=.*[A-Z])")) {
+                                    Toast.makeText(this, "debe tener una letra mayusculas", Toast.LENGTH_LONG).show();
+                                }else{
+                                    errorTextView.setText("");
+                                    SignUpTask signUpTask = new SignUpTask();
+                                    signUpTask.execute();
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
 
-            errorTextView.setText("");
-            SignUpTask signUpTask = new SignUpTask();
-            signUpTask.execute();
-        }
+    }
 
 
 
