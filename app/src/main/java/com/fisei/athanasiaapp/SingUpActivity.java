@@ -45,7 +45,7 @@ public class SingUpActivity extends AppCompatActivity {
         @Override
         protected JSONObject doInBackground(URL... urls) {
             UserClient newUser = new UserClient(0, editTextName.getText().toString(),
-                    editTextEmail.getText().toString() + "@ath.com",
+                    editTextEmail.getText().toString() ,
                     editTextCedula.getText().toString(), "");
             responseTask = UserClientService.SignUpNewUser(newUser, editTextPassword.getText().toString());
             return null;
@@ -77,65 +77,11 @@ public class SingUpActivity extends AppCompatActivity {
             errorTextView.setText(R.string.fields_empty_error);
 
         } else {
-            String contraseña = editTextPassword.getText().toString();
-            if (contraseña.length() < 6 || contraseña.length() > 10){
-                Toast.makeText(this, "La contraseña debe  tener entre 6 y 10 caracteres", Toast.LENGTH_LONG).show();
-                return;
-            }
-            boolean ma = contraseña.matches(".*[[:punct:]]");
-            if (!contraseña.matches(".*[[:punct:]]")) {
-                Toast.makeText(this, "debe tener caracteres especiales", Toast.LENGTH_LONG).show();
-                return;
-            }
-
-            if (!contraseña.matches(".*\\d.*")) {
-                Toast.makeText(this, "debe tener numeros", Toast.LENGTH_LONG).show();
-                return;
-            }
-            if (!contraseña.matches(".*[a-z].*")) {
-                Toast.makeText(this, "Debe tener una letra minuscula", Toast.LENGTH_LONG).show();
-                return;
-            }
-            if (!contraseña.matches(".*[A-Z].*")) {
-                Toast.makeText(this, "Debe tener una letra mayúsculas", Toast.LENGTH_LONG).show();
-                return;
-            }
-
             errorTextView.setText("");
             SignUpTask signUpTask = new SignUpTask();
             signUpTask.execute();
 
 
-
-
-/*
-            if (contraseña.length() < 10) {
-                Toast.makeText(this, "La contraseña debe tener máximo 10 caráteres", Toast.LENGTH_LONG).show();
-            } else {
-                if (contraseña.length() > 6) {
-                    Toast.makeText(this, "La contraseña debe tener mÍnimo 6 carácteres", Toast.LENGTH_LONG).show();
-                } else {
-                    if (!contraseña.matches("(?=.*[@#$%^&+=])")) {
-                        Toast.makeText(this, "debe tener caracteres especiales", Toast.LENGTH_LONG).show();
-                    } else {
-                        if (!contraseña.matches("(?=.*[0-9])")) {
-                            Toast.makeText(this, "debe tener numeros", Toast.LENGTH_LONG).show();
-                        } else {
-                            if (!contraseña.matches("(?=.*[a-z])")) {
-                                Toast.makeText(this, "debe tener una letra minuscula", Toast.LENGTH_LONG).show();
-                            } else {
-                                if (!contraseña.matches("(?=.*[A-Z])")) {
-                                    Toast.makeText(this, "debe tener una letra mayusculas", Toast.LENGTH_LONG).show();
-                                }else{
-                                    errorTextView.setText("");
-                                    SignUpTask signUpTask = new SignUpTask();
-                                    signUpTask.execute();
-                                }
-                            }
-                        }
-                    }
-                }
-            }*/
         }
 
     }

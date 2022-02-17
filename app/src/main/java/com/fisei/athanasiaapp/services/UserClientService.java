@@ -137,6 +137,7 @@ public class UserClientService {
                 JSONObject errors = jsonObject.getJSONObject("errors");
                 responseAth.Message = "";
                 boolean emailError = false;
+
                 try{
                     responseAth.Message += Utils.CleanString(errors.getString("email"));
                     emailError = true;
@@ -152,6 +153,19 @@ public class UserClientService {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+                try{
+                    if (emailError){
+                        responseAth.Message += "\n" + Utils.CleanString(errors.getString("password"));
+                    } else {
+                        responseAth.Message += Utils.CleanString(errors.getString("password"));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
             }
         } catch (IOException | JSONException e) {
             e.printStackTrace();
