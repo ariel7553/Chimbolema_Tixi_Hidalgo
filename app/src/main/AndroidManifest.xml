@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fisei.athanasiaapp">
+    package="MiPrimeraApp">
     <!-- Permisos necesarios para la App. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,21 +11,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AthanasiaApp"
+        android:theme="@style/Theme.Miapp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".OrderDetailsActivity"
+            android:name="com.fisei.MiPrimeraApp.OrderDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".SingUpActivity"
+            android:name="com.fisei.MiPrimeraApp.SingUpActivity"
             android:exported="false" />
         <activity
-            android:name=".AthanasiaActivity"
+            android:name="com.fisei.MiPrimeraApp.MiAppActivity"
             android:exported="false"
-            android:label="@string/title_activity_athanasia"
-            android:theme="@style/Theme.AthanasiaApp.NoActionBar" />
+            android:label="@string/title_activity_miapp"
+            android:theme="@style/Theme.Miapp.NoActionBar" />
         <activity
-            android:name=".LoginActivityVELLC"
+            android:name="com.fisei.MiPrimeraApp.LoginActivityVELLC"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.fisei.MiPrimeraApp.MainActivity"
             android:exported="true" />
     </application>
 

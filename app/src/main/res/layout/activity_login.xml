@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivityVELLC">
+    tools:context="com.fisei.MiPrimeraApp.LoginActivityVELLC">
 
     <EditText
         android:id="@+id/editTextEmailLogin"
@@ -24,7 +24,7 @@
         android:layout_width="171dp"
         android:layout_height="61dp"
         android:text="@string/label_signup"
-        android:textSize="24sp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -37,7 +37,7 @@
         android:layout_width="204dp"
         android:layout_height="75dp"
         android:text="@string/label_login"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -91,7 +91,7 @@
         android:layout_height="73dp"
         android:ems="10"
         android:hint="@string/password_example"
-        android:inputType="textVisiblePassword"
+        android:inputType="textPassword"
         android:maxLength="10"
         android:password="false"
         app:layout_constraintBottom_toBottomOf="parent"
