@@ -2,7 +2,7 @@ package com.fisei.MiPrimeraApp.utilities;
 
 public class URLs {
 
-    private  static String base_url = "https://serviciosFactura.somee.com/APISERVICE/api";
+    private  static String base_url = "http://appfactura434-001-site1.itempurl.com/api";
 
     //Client
     public static final String LOGIN = base_url+"/userClient/login";
